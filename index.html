@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+ </script>
+ <script>
+ $(document).ready(function(){
+ setInterval(function(){cache_clear()},5000);
+ });
+ function cache_clear()
+{
+ window.location.reload(true);
+}
+</script>
+</head>
+
+ <body>
+ <img src="./web/ChartMonitor/image/TheFuture.jpg" alt="Chart Reloading ...!" style="width:954px;height:578px;">
+ <p>This page refreshes the chart automatically, every 5 seconds</p>
+ </body>
+ </html>

@@ -19,6 +19,8 @@ import java.io.*;
  * Created by prageeth.g on 16/11/2015.
  */
 public class LogChartPanel extends JPanel {
+    public static final String LOG_FILE_PATH = "C:\\Users\\prageeth.g\\git\\mainprojects\\ema\\attestation\\AttestationClient\\TimeLogger.log";
+    public static final String CHART_IMAGE_FILE_PATH = ".\\web\\ChartMonitor\\image\\TheFuture.jpg";
     private static LogChartPanel instance;
     private ChartPanel chartPanel;
     private long lastFileChangedTimestamp = 0;
@@ -115,7 +117,7 @@ public class LogChartPanel extends JPanel {
                 LogChartPanel.this.updateUI();
 
                 ChartUtilities.saveChartAsJPEG(
-                        new java.io.File("C:\\Software\\apache-tomcat-7.0.61-windows-x64\\apache-tomcat-7.0.61\\webapps\\ChartMonitor\\image\\TheFuture.jpg"), xylineChart, 1000, 600);
+                        new java.io.File(CHART_IMAGE_FILE_PATH), xylineChart, 1000, 600);
                 return null;
             }
         };
@@ -142,7 +144,7 @@ public class LogChartPanel extends JPanel {
             @Override
             public void run() {
                 BufferedReader br = null;
-                File file = new File("C:\\Users\\prageeth.g\\git\\mainprojects\\ema\\attestation\\AttestationClient\\TimeLogger.log");
+                File file = new File(LOG_FILE_PATH);
 
                 while (true) {
                     try {
